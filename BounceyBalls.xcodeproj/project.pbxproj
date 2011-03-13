@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C95A31DB132D6B8C00A2E3EA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95A31DA132D6B8C00A2E3EA /* icon.png */; };
 		C9C930C213101D93006D5AEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C930C113101D93006D5AEC /* QuartzCore.framework */; };
 		C9D2969513100EFA003479FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D2969413100EFA003479FD /* UIKit.framework */; };
 		C9D2969713100EFA003479FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D2969613100EFA003479FD /* Foundation.framework */; };
@@ -40,13 +41,13 @@
 		C9D2970B13100FB2003479FD /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = C9D296D013100FB2003479FD /* cpVect.c */; };
 		C9D2971113100FC1003479FD /* BounceyBallsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D2970E13100FC1003479FD /* BounceyBallsAppDelegate.m */; };
 		C9D2971213100FC1003479FD /* BounceyBallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D2971013100FC1003479FD /* BounceyBallsViewController.m */; };
-		C9D2971B13100FCA003479FD /* BounceyBalls-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9D2971413100FCA003479FD /* BounceyBalls-Info.plist */; };
 		C9D2971C13100FCA003479FD /* BounceyBallsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2971513100FCA003479FD /* BounceyBallsViewController.xib */; };
 		C9D2971E13100FCA003479FD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D2971913100FCA003479FD /* MainWindow.xib */; };
 		C9D2972213100FD4003479FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D2972113100FD4003479FD /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C95A31DA132D6B8C00A2E3EA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C9C930C113101D93006D5AEC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9D2969013100EFA003479FD /* BounceyBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BounceyBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D2969413100EFA003479FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -276,6 +277,7 @@
 			children = (
 				C9D2971413100FCA003479FD /* BounceyBalls-Info.plist */,
 				C9D2971513100FCA003479FD /* BounceyBallsViewController.xib */,
+				C95A31DA132D6B8C00A2E3EA /* icon.png */,
 				C9D2971913100FCA003479FD /* MainWindow.xib */,
 			);
 			path = Resources;
@@ -341,9 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D296F213100FB2003479FD /* CMakeLists.txt in Resources */,
-				C9D2971B13100FCA003479FD /* BounceyBalls-Info.plist in Resources */,
 				C9D2971C13100FCA003479FD /* BounceyBallsViewController.xib in Resources */,
 				C9D2971E13100FCA003479FD /* MainWindow.xib in Resources */,
+				C95A31DB132D6B8C00A2E3EA /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +437,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-DNDEBUG",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -464,7 +469,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Supporting Files/BounceyBalls-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = NDEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				HEADER_SEARCH_PATHS = chipmunk/include/chipmunk;
 				INFOPLIST_FILE = "Resources/BounceyBalls-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
